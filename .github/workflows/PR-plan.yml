@@ -6,11 +6,12 @@ on:
       - '**/*.tf'
       - '**/*.tfvars'
     branches:
-      - main
+      - master
 
 permissions:
   pull-requests: write
   contents: read
+  id-token: write
 
 jobs:
   terraform-plan:
@@ -25,6 +26,12 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.6.0
+
+      - name: Configure AWS Credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::590184049401:role/github-actions-role
+          aws-region: us-east-1  # or your desired AWS region
 
       - name: Terraform Init
         run: terraform init
