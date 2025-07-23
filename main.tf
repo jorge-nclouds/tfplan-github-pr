@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "example" {
   }
 }
 
-resource "aws_s3_bucket" "example" {
+resource "aws_s3_bucket" "2example" {
   bucket = "2-poc-s3-bucket-afg-tf-plan"
 
   tags = {
