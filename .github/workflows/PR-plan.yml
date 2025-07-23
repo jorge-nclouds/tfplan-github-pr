@@ -6,7 +6,7 @@ on:
       - '**/*.tf'
       - '**/*.tfvars'
     branches:
-      - main
+      - master
 
 permissions:
   pull-requests: write
