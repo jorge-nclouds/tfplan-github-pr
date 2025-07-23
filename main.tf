@@ -3,6 +3,6 @@ resource "aws_s3_bucket" "example" {
 
   tags = {
     Environment = "Dev"
-    Project = "terraform plan"
+    Project = "terraform-plan"
   }
 }
