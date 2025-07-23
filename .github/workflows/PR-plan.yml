@@ -11,7 +11,7 @@ on:
 permissions:
   pull-requests: write
   contents: read
-  id-token: write       # REQUIRED for OIDC
+  id-token: write
 
 jobs:
   terraform-plan:
